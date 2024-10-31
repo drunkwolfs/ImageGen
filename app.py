@@ -34,7 +34,7 @@ def render_image(filename):
         options={
             'format': 'png',      # Убедитесь, что формат установлен на png
             'quality': '50',     # качество
-            'no-stop-slow-scripts': '',  # Отключение остановки медленных скриптов
+            #'no-stop-slow-scripts': '',  # Отключение остановки медленных скриптов
             'disable-smart-width': '',     # Отключение "умной ширины"
             'width': '550',    
             'height': '800'
