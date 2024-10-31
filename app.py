@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_file
 import json
 import imgkit
 import os
+import sys
 from io import BytesIO
 
 app = Flask(__name__)
