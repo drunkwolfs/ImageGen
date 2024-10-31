@@ -19,13 +19,13 @@ def home():
 def render_image(filename):
     data = load_data()  # Чтение данных из JSON-файла
     
-    print(json.dumps(data, ensure_ascii=False, indent=4), file=sys.stderr)
-    template_path = os.path.join('templates', 'page_template.html')  # Путь к шаблону в папке templates
+    #print(json.dumps(data, ensure_ascii=False, indent=4), file=sys.stderr)
+    #template_path = os.path.join('templates', 'page_template.html')  # Путь к шаблону в папке templates
     # Проверка существования файла шаблона
-    if os.path.exists(template_path):
-        print(f"Шаблон найден: {template_path}", file=sys.stderr)
-    else:
-        print(f"Шаблон не найден: {template_path}", file=sys.stderr)
+    #if os.path.exists(template_path):
+    #    print(f"Шаблон найден: {template_path}", file=sys.stderr)
+    #else:
+    #    print(f"Шаблон не найден: {template_path}", file=sys.stderr)
         
     html_output = render_template('page_template.html', data=data)
     
