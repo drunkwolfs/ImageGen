@@ -4,7 +4,8 @@ FROM python:3.9-slim
 # Устанавливаем необходимые зависимости для wkhtmltoimage
 RUN apt-get update && \
     apt-get install -y wkhtmltopdf && \
-    apt-get clean
+    apt-get clean && \
+    pip install --upgrade pip
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
