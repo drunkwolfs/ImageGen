@@ -15,7 +15,7 @@ def load_data():
 def home():
     return '444'
 
-@app.route('/imgbox-cdn/lol/<string:filename>')
+@app.route('/imgbox-cdn/090a332c9b6a135972ecd7fbc3a7db46/<string:filename>')
 def render_image(filename):
     data = load_data()  # Чтение данных из JSON-файла
     
