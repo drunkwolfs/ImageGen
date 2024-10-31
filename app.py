@@ -30,7 +30,17 @@ def render_image(filename):
     html_output = render_template('page_template.html', data=data)
     
     # Создаем изображение в памяти
-    img = imgkit.from_string(html_output, False)  # Используем False для возврата изображения в виде байтов
+    img = imgkit.from_string(html_output, False, 
+        options={
+            'format': 'png',      # Убедитесь, что формат установлен на png
+            'quality': '100',     # Максимальное качество
+            'no-stop-slow-scripts': '',  # Отключение остановки медленных скриптов
+            'disable-smart-width': '',     # Отключение "умной ширины"
+            'margin-top': '0',    # Установите верхний отступ в 0
+            'margin-right': '0',  # Установите правый отступ в 0
+            'margin-bottom': '0', # Установите нижний отступ в 0
+            'margin-left': '0'    # Установите левый отступ в 0
+        })  # Используем False для возврата изображения в виде байтов
     
     return send_file(BytesIO(img), mimetype='image/png', as_attachment=True, download_name='output_image.png')
 
