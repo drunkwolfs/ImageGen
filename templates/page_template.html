@@ -7,34 +7,67 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-start; /* Сдвиг вниз от верхней панели */
             height: 100vh;
-            margin: 0;
+            background-color: #000;
+        }
+        .background-container {
+            width: 700px;
+            height: 1000px;
+            background-image: url('https://tigerbeam.github.io/chat/wallpaper.jpg'); /* URL фона */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 20px; /* Отступ сверху */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для выделения */
+            border-radius: 10px;
+            text-shadow: 1px 1px 0 #FF6347, /* Томато */
+                         -1px -1px 0 #FF6347,
+                         1px -1px 0 #FF6347,
+                         -1px 1px 0 #FF6347; /* Обводка текста заголовка */
+            font-size: 2em;
         }
         .table-container {
-            width: 490px;
+            width: 80%;
+            max-width: 650px;
             backdrop-filter: blur(5px);
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: auto;
         }
         th, td {
-            padding: 8px;
+            padding: 8px; /* Уменьшение отступа внутри ячеек */
             text-align: left;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #00BFFF;
-            font-weight: bold;
+            color: #00BFFF; /* Яркий синий цвет для текста */
+            font-weight: bold; /* Увеличиваем толщину шрифта */
+            text-shadow: 0 0 5px #00BFFF, /* Синий неон */
+                         0 0 10px #00BFFF,
+                         0 0 15px #00BFFF; /* Эффект свечения */
+            line-height: 1.2; /* Уменьшение межстрочного интервала */
         }
         th {
-            background-color: rgba(0, 0, 0, 0.5);
+            font-weight: bold; /* Увеличиваем толщину шрифта для заголовков */
+        }
+        th:nth-child(2), td:nth-child(2), th:nth-child(3), td:nth-child(3) {
+            width: 1%;
+            white-space: nowrap;
+            text-align: center;
         }
         tr:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.1);
@@ -47,39 +80,47 @@
             font-weight: bold;
             font-size: 1.5em;
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            color: #FFD700;
-            text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+            color: #FFD700; /* Золотистый цвет для категорий */
+            text-shadow: 0 0 5px #FF00FF, /* Розовый неон */
+                         0 0 10px #FF00FF,
+                         0 0 15px #FF00FF; /* Эффект свечения */
+        }
+        .category-header td {
+            color: inherit; /* Убираем переопределение цвета текста для ячеек категорий */
+            text-shadow: 0 0 5px #FF00FF, /* Розовый неон */
+                         0 0 10px #FF00FF,
+                         0 0 15px #FF00FF; /* Эффект свечения */
         }
     </style>
 </head>
 <body>
-
-<div class="table-container">
-    <h1>В наличии</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Пряник</th>
-                <th>Цена (₽)</th>
-                <th>Количество</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for category in data['products'] %}
-            <tr class="category-header">
-                <td colspan="3">{{ category['category'] }}</td>
-            </tr>
-            {% for item in category['items'] %}
-            <tr>
-                <td>{{ item['name'] }}</td>
-                <td>{{ item['price'] }}</td>
-                <td>{{ item['quantity'] if item['quantity'] else '' }}</td>
-            </tr>
-            {% endfor %}
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-
+    <div class="background-container">
+        <h1>В наличии</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Пряник</th>
+                        <th>Цена (₽)</th>
+                        <th>Количество</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category, items in data.items() %}
+                    <tr class="category-header">
+                        <td colspan="3">{{ category }}</td>
+                    </tr>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item['name'] }}</td>
+                        <td>{{ item['price'] }}</td>
+                        <td>{{ item['quantity'] if item['quantity'] else '' }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
