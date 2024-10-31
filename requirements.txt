@@ -1,4 +1,2 @@
-Flask
-imgkit
-# Необходимые зависимости для imgkit
-wkhtmltopdf
+Flask>=2.2.0
+imgkit>=1.2.3
