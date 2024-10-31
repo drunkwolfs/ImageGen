@@ -33,7 +33,7 @@ def render_image(filename):
     img = imgkit.from_string(html_output, False, 
         options={
             'format': 'png',      # Убедитесь, что формат установлен на png
-            'quality': '50',     # качество
+            'quality': '5',     # качество
             'no-stop-slow-scripts': '',  # Отключение остановки медленных скриптов
             'disable-smart-width': '',     # Отключение "умной ширины"
             'width': '550',    
