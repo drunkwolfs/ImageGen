@@ -106,11 +106,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for category, items in data.items() %}
+                    {% for category in data['products'] %}
                     <tr class="category-header">
-                        <td colspan="3">{{ category }}</td>
+                        <td colspan="3">{{ category['category'] }}</td>
                     </tr>
-                    {% for item in items %}
+                    {% for item in category['items'] %}
                     <tr>
                         <td>{{ item['name'] }}</td>
                         <td>{{ item['price'] }}</td>
