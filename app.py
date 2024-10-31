@@ -36,10 +36,8 @@ def render_image(filename):
             'quality': '100',     # Максимальное качество
             'no-stop-slow-scripts': '',  # Отключение остановки медленных скриптов
             'disable-smart-width': '',     # Отключение "умной ширины"
-            'width': '700',    # Установите верхний отступ в 0
-            'margin-right': '0',  # Установите правый отступ в 0
-            'margin-bottom': '0', # Установите нижний отступ в 0
-            'margin-left': '0'    # Установите левый отступ в 0
+            'width': '700',    
+            'height': '1000'
         })  # Используем False для возврата изображения в виде байтов
     
     return send_file(BytesIO(img), mimetype='image/png', as_attachment=True, download_name='output_image.png')
