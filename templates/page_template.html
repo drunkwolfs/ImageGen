@@ -73,7 +73,7 @@
             <tr>
                 <td>{{ item['name'] }}</td>
                 <td>{{ item['price'] }}</td>
-                <td>{{ item['quantity'] if item['quantity'] is not None else '' }}</td>
+                <td>{{ item['quantity'] if item['quantity'] else '' }}</td>
             </tr>
             {% endfor %}
             {% endfor %}
