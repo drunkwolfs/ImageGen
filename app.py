@@ -12,10 +12,9 @@ def load_data():
 
 @app.route('/')
 def home():
-    data = load_data()  # Чтение данных из JSON-файла
-    return render_template('table_template.html', data=data)
+    return '444'
 
-@app.route('/render-image')
+@app.route('/imgbox-cdn/<path:filename>')
 def render_image():
     data = load_data()  # Чтение данных из JSON-файла
     html_output = render_template('table_template.html', data=data)
