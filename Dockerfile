@@ -1,5 +1,10 @@
-# Используем базовый образ с Python и wkhtmltopdf
-FROM mkubenka/python-wkhtmltopdf
+# Используем базовый образ с Python
+FROM python:3.9-slim
+
+# Устанавливаем необходимые зависимости для wkhtmltoimage
+RUN apt-get update && \
+    apt-get install -y wkhtmltopdf && \
+    apt-get clean
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
