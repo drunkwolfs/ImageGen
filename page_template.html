@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>В наличии</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+        }
+        .table-container {
+            width: 490px;
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #00BFFF;
+            font-weight: bold;
+        }
+        th {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .category-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #FFD700;
+            text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h1>В наличии</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Пряник</th>
+                <th>Цена (₽)</th>
+                <th>Количество</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in data['products'] %}
+            <tr class="category-header">
+                <td colspan="3">{{ category['category'] }}</td>
+            </tr>
+            {% for item in category['items'] %}
+            <tr>
+                <td>{{ item['name'] }}</td>
+                <td>{{ item['price'] }}</td>
+                <td>{{ item['quantity'] if item['quantity'] is not None else '' }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
