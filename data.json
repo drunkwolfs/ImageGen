@@ -1,0 +1,79 @@
+{
+    "products": [
+        {
+            "category": "Моклобемид",
+            "items": [
+                {
+                    "name": "Aurorix 300mg 30tab с риской",
+                    "price": 1950,
+                    "quantity": 4
+                }
+            ]
+        },
+        {
+            "category": "Гуанфацин",
+            "items": [
+                {
+                    "name": "Arislow ER 1mg 28tab",
+                    "price": 2300,
+                    "quantity": 1
+                },
+                {
+                    "name": "Arislow ER 2mg 28tab",
+                    "price": 2800,
+                    "quantity": 10
+                },
+                {
+                    "name": "Arislow ER 4mg 28tab",
+                    "price": 3300,
+                    "quantity": 2
+                }
+            ]
+        },
+        {
+            "category": "Ребоксетин",
+            "items": [
+                {
+                    "name": "Edronax 4mg 60tab",
+                    "price": 3100,
+                    "quantity": null
+                },
+                {
+                    "name": "Edronax 4mg 40tab unpack",
+                    "price": 2100,
+                    "quantity": null
+                }
+            ]
+        },
+        {
+            "category": "Ламотриджин",
+            "items": [
+                {
+                    "name": "Lamictal DC 50mg 30tab",
+                    "price": 800,
+                    "quantity": null
+                },
+                {
+                    "name": "Lamictal DC 200mg 30tab",
+                    "price": 2250,
+                    "quantity": null
+                }
+            ]
+        },
+        {
+            "category": "Атомоксетин",
+            "items": [
+                {
+                    "name": "Atominex 40mg 28caps",
+                    "price": 4400,
+                    "quantity": null
+                },
+                {
+                    "name": "Atominex 80mg 28caps",
+                    "price": 5250,
+                    "quantity": null
+                }
+            ]
+        }
+    ]
+}
