@@ -41,8 +41,7 @@
             font-size: 2em;
         }
         .table-container {
-            width: 80%;
-            max-width: 650px;
+            width: 490px; /* Фиксированная ширина таблицы */
             backdrop-filter: blur(5px);
         }
         table {
@@ -56,15 +55,16 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: #00BFFF; /* Яркий синий цвет для текста */
             font-weight: bold; /* Увеличиваем толщину шрифта */
-            text-shadow: 0 0 5px #00BFFF, /* Синий неон */
-                         0 0 10px #00BFFF,
-                         0 0 15px #00BFFF; /* Эффект свечения */
+            text-shadow: 
+                0 0 2px #00BFFF, /* Уменьшенный синий неон */
+                0 0 1px #00BFFF; 
             line-height: 1.2; /* Уменьшение межстрочного интервала */
         }
         th {
             font-weight: bold; /* Увеличиваем толщину шрифта для заголовков */
         }
-        th:nth-child(2), td:nth-child(2), th:nth-child(3), td:nth-child(3) {
+        th:nth-child(2), td:nth-child(2),
+        th:nth-child(3), td:nth-child(3) {
             width: 1%;
             white-space: nowrap;
             text-align: center;
